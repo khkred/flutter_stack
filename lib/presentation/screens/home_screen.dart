@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_stack/presentation/screens/to_do_list_screen.dart';
 
-import '../../basic_providers.dart';
+import '../../providers/basic_providers.dart';
+
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -25,7 +27,10 @@ class HomeScreen extends ConsumerWidget {
               Text(
                 'Count: $count',
                 style: const TextStyle(fontSize: 24),
-              )
+              ),
+              ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const TodoListScreen()));
+              }, child: const Text('Go to Todo List'))
             ],
           ),
         ),
