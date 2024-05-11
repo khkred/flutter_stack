@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_stack/presentation/screens/counter_stream_screen.dart';
 import 'package:flutter_stack/presentation/screens/to_do_list_screen.dart';
 import 'package:flutter_stack/presentation/screens/users_screen.dart';
 
@@ -54,6 +55,12 @@ class HomeScreen extends ConsumerWidget {
                             builder: (context) => const UsersScreen()));
                   },
                   child: const Text('Go to Users Screen')),
+              ElevatedButton(onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const CounterStreamScreen()));
+              }, child: const Text('Go to Counter Stream Screen')),
             ],
           ),
         ),
